@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-display {
+  font-family: "Space Grotesk", sans-serif;
+}
+.font-data {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.blink-cursor::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 15px;
+  margin-left: 4px;
+  background: #34d399;
+  animation: blink 1s steps(1) infinite;
+  vertical-align: middle;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.rail-dot {
+  position: relative;
+}
+.rail-dot::before {
+  content: "";
+  position: absolute;
+  left: -17px;
+  top: 50%;
+  bottom: -50%;
+  width: 1px;
+  background: rgb(30 41 59);
+}
+.repo-row:last-child .rail-dot::before {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(51 65 85);
+  border-radius: 4px;
+}
